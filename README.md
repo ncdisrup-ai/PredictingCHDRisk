@@ -35,3 +35,4 @@ Please see the description in .ipynb about this project.
 
 ##  🚀 Results 
 
+Predicting the risk of CHD in a 10 years frame
