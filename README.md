@@ -1,58 +1,31 @@
-# ProjectTypeClassification Finetuning DistilBert
-Classify Project type with fine tuning a transformer model (DistilBert)
+# Predicting the risk of CHD
+Bayesian network that guarantees the best results in predicting the risk of CHD (coronary heart disease)
 
 ## 🤔 What is this?
-**Description:**  How to know the type of IT projects/contracts (Services) that have been carrying out in the Portuguese Public Administration?.
-In addition to project values, what type of projects have been developed and by whom? What is the competition and what type of services do they focus on? Strategic Digital Transformation Consulting; in Project Management/PMO; in Requirements Gathering/Analysis or Architecture; in Project Implementation; in Support/Maintenance; in Change Management; or in SaaS?
+**Description:**  Cardiovascular diseases are the number one cause of death worldwide; around 17.9 million people die each year, which represents 31% of all deaths worldwide. Cardiovascular diseases are
+a group of disorders of the heart and blood vessels and include coronary heart disease (CHD), cerebrovascular disease, rheumatic heart disease, and other conditions. Thus, CHD continues to
+be a leading cause of morbidity and mortality among adults. It is a disease of the blood vessels supplying the heart, i.e., the heart’s blood supply is blocked or interrupted by a build-up of fatty
+substances in the coronary arteries. Hence, we intend to predict a 10-year risk of CHD in patients using Bayesian networks. The original data are from a large cohort from the BioLINCC website.
 
-It involves the research and design of Artificial Intelligence algorithms, in this project we will be fine tuning a transformer model (DistilBert) for the **Multiclass text classification** problem.
-Given a Project description the model will classify into one of the project categories out of the given list.
+The **main goal** of this project is to implement a Bayesian network that guarantees the best results in predicting the risk of CHD. Thus, you need to learn a Bayesian network for a  dataset.
 
 
 ## 📚 Data
 
-Data with the projects (to train the model and to apply the model) are in data dir.
+Data with the projects (to obtain and validate the Bayesian Network) are in data dir.
  
-We are using Project Descriptions from   Portuguese Public Administration site of Contract  aggregator dataset available at [base.gov Repository](https://https://www.base.gov.pt/base4).
+The original data are from a large cohort from the BioLINCC website.
 
-Please bear in mind that this data has already been cleaned and processed: `ContratosAP_v5.2_TrainPred.xlsx`.
-
-Dataframe `DadosTreinoVal` has `751` rows of data to train and test.  Where each row has the following data-point:
-	
-    - Objeto do Contrato: Contract Object
-    		 
-    - Contrato (Tipo): Type of Contract
-    		 
-   
-Type of Contract to be able to classify IT project descriptions from Public Portuguese Administration into the following categories:		 
-		 
-     
-     - Digital Transformation (0)
-		 
-     - Project Management/PMO (1)
-		 
-     - Requirements Definition/Analysis/Architecture (2)
-		 
-     - Implementation (3)
-		 
-     - Support/Maintenance (4)
-		 
-     - Change Management (5)
-		 
-     - Licenses (6)
-		 
-     - SaaS (7)
+The dataset has 15 features (without considering the target variable). If you are experiencing memory problems in learning your Bayesian network, you can do a feature selection and select
+the most relevant ones.
 
 
 ##  🚀 Quick Install
 
 
-Due to the power of GPU needed i advise you to use colab with `ClassifyContratType_TransformersFineTunEx_v2_colab.ipynb`(in classification dir)
+copy data (in data dir) `CHD_dataset.csv` to the same dir then the solution 'Predicting the risk of CHD (Chronic Heart Disease) BayesianNetwork.ipynb'.
 
-copy data (in data dir) `ContratosAP_v5.2_TrainPred.xlsx` to sample_data.
-
-
-Run
+Run 'Predicting the risk of CHD (Chronic Heart Disease) BayesianNetwork.ipynb'
 
 
 ## 📖 Documentation
@@ -60,8 +33,5 @@ Run
 Please see the description in .ipynb about this project.
 
 
+##  🚀 Results 
 
-
-##  🚀 Results (Applied AI vs Transformers)
-
-Having in consideration that we have few data (751 projects) to fine tune the 8 project categories, we´ve understood that distilbert focus on the categories with more data, so we only managed to obtain about 50% acurracy (for instance with Support Linear Classifier - SVC - Applied AI, with the same data to train we manage to obtain 84% acurracy).
